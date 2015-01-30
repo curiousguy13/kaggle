@@ -1,3 +1,4 @@
+#digitRecognizer using k-nearest neighbour algorithm fom scikit-learn
 import numpy as np
 import pandas as pd
 import csv as csv
