@@ -38,7 +38,7 @@ output = neigh.apply_multiclass(test_data).astype(int)
 
 
 #put the output in a file
-predictions_file = open("knn_sklearn.csv", "wb")
+predictions_file = open("knn_shogun.csv", "wb")
 open_file_object = csv.writer(predictions_file)
 open_file_object.writerow(["label"])
 open_file_object.writerows(zip(output))
