@@ -25,12 +25,16 @@ test_data=test_db.values
 
 output = neigh.predict(test_data).astype(int)
 
+count=len(output)
+ids=[]
+for i in range(1,count):
+	ids.append(i)
 
 #put the output in a file
 predictions_file = open("knn_sklearn.csv", "wb")
 open_file_object = csv.writer(predictions_file)
-open_file_object.writerow(["label"])
-open_file_object.writerows(zip(output))
+open_file_object.writerow(["ImageId","Label"])
+open_file_object.writerows(zip(ids,output))
 predictions_file.close()
 print 'Done.'
 

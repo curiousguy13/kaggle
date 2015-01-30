@@ -34,14 +34,14 @@ test_data=test_db.values
 x_test=test_data[0::,1::]
 y_test=test_data[0::,0]
 
-output = neigh.apply_multiclass(test_data).astype(int)
+output = knn.apply_multiclass(test_data).astype(int)
 
 
 #put the output in a file
 predictions_file = open("knn_shogun.csv", "wb")
 open_file_object = csv.writer(predictions_file)
-open_file_object.writerow(["label"])
-open_file_object.writerows(zip(output))
+open_file_object.writerow(["ImageId","Label"])
+open_file_object.writerows(zip(ids,output))
 predictions_file.close()
 print 'Done.'
 
